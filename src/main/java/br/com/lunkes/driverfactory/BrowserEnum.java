@@ -11,7 +11,7 @@ public enum BrowserEnum implements BrowserInterface{
     FIREFOX {
         public FirefoxDriver driver(boolean ci){
             if(ci){
-                System.setProperty("webdriver.gecko.driver", "usr/local/bin/geckodriver");
+                System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver");
             }else{
                 System.setProperty("webdriver.gecko.driver", "C:\\drivers\\geckodriver.exe");
             }
