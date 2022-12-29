@@ -20,12 +20,13 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: alexandrelunkes/maven-chrome:v1.2
-      workdir: /
+      options:
+        -v "${{github.workspace}}":"${{github.workspace}}"
 
     steps:
     - uses: actions/checkout@v2
     - name: Ajuste Pasta
-      run: pwd
+      run: cp -R ${{github.workspace}} /
     - name: Teste Selenium
       run: mvn -ntp clean test -Dtest=RunnerAll -Dbrowser=chrome -Dci=sim
 
