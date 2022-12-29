@@ -22,7 +22,7 @@ public enum BrowserEnum implements BrowserInterface{
     CHROME {
         public WebDriver driver(boolean ci){
             if(ci){
-                System.setProperty("webdriver.chrome.driver", "usr/local/bin/chromedriver");
+                System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
             }else{
                 System.setProperty("webdriver.chrome.driver", "C:\\drivers\\chromedriver.exe");
             }
