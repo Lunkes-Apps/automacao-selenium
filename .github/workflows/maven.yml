@@ -20,11 +20,12 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: alexandrelunkes/maven-chrome:v1.2
+      workdir: /
 
     steps:
     - uses: actions/checkout@v2
     - name: Ajuste Pasta
-      run: mkdir -p usr/local/bin/ && cp /usr/local/bin/geckodriver /__w/automacao-selenium/automacao-selenium/usr/local/bin/
+      run: pwd
     - name: Teste Selenium
       run: mvn -ntp clean test -Dtest=RunnerAll -Dbrowser=chrome -Dci=sim
 
