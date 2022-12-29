@@ -27,6 +27,17 @@ public enum BrowserEnum implements BrowserInterface{
                 System.setProperty("webdriver.chrome.driver", "C:\\drivers\\chromedriver.exe");
             }
             ChromeOptions capabilites = new ChromeOptions();
+            String [] arguments = {
+                    "--no-sandbox",
+                    "--disable-dev-shm-usage",
+                    "--verbose",
+                    "--allow-running-insecure-content",
+                    "--allow-insecure-localhost",
+                    "--disable-gpu"
+            };
+
+            capabilites.addArguments(arguments);
+
             return new ChromeDriver(capabilites);
         }
     }
