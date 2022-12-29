@@ -18,7 +18,7 @@ public class BasePage {
         int timeout = Integer.parseInt(retornaPropriedade("timeout"));
         try {
             PageFactory.initElements(new AjaxElementLocatorFactory(getDriver(),timeout), this);
-            wait = new WebDriverWait(getDriver(), Duration.ofSeconds(timeout));
+            wait = new WebDriverWait(getDriver(), timeout);
         } catch (DriverNotConfigured e) {
             throw new RuntimeException(e);
         }

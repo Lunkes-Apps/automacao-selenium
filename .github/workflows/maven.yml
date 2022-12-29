@@ -17,11 +17,19 @@ on:
 jobs:
   build:
 
-    runs-on: alexandrelunkes/maven-chrome:latest
+    runs-on: ubuntu-latest
+    container:
+      image: alexandrelunkes/maven-chrome:v1.2
+      options: --user 0
+#      options:
+#        -v "${{github.workspace}}":"${{github.workspace}}"
 
     steps:
+    - uses: actions/checkout@v2
+#    - name: Ajuste Pasta
+#      run: cp -R ${{github.workspace}} /
     - name: Teste Selenium
-      run: mvn clean test -Dtest=RunnerAll -Dbrowser=chrome
+      run: whoami && mvn -ntp clean test -Dtest=RunnerAll -Dbrowser=chrome -Dci=sim
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     #- name: Update dependency graph

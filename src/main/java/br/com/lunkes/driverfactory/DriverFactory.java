@@ -13,11 +13,11 @@ public class DriverFactory{
         return driver;
     }
 
-    public static WebDriver getDriver(BrowserEnum browser){
+    public static WebDriver getDriver(BrowserEnum browser, boolean ci){
         if(driver != null){
             return driver;
         }
-        driver = browser.driver();
+        driver = browser.driver(ci);
         return driver;
     }
 
