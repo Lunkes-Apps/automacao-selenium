@@ -16,9 +16,9 @@ Feature: Classificar triângulo
       | Isósceles      | 2   | 2   | 3   |
       | Escaleno       | 2   | 3   | 4   |
 
-#  Scenario: Informar vértices que não possibilita um triangulo
-#    Given que estou na tela principal
-#    When informo os vértices '2', '1' e '10'
-#    And clico no botao identificar
-#    Then deve ser informado que o triangulo não é possível
+  Scenario: Informar vértices que não possibilita um triangulo
+    Given que estou na tela principal
+    When informo os vértices '2', '1' e '10'
+    And clico no botao identificar
+    Then deve ser informado que o triangulo não é possível
 
