@@ -1,7 +1,5 @@
 package br.com.lunkes.utils;
 
-import org.slf4j.helpers.Util;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
