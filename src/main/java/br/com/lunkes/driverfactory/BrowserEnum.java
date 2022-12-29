@@ -33,7 +33,8 @@ public enum BrowserEnum implements BrowserInterface{
                     "--verbose",
                     "--allow-running-insecure-content",
                     "--allow-insecure-localhost",
-                    "--disable-gpu"
+                    "--disable-gpu",
+                    "--remote-debugging-port=9222"
             };
 
             capabilites.addArguments(arguments);
