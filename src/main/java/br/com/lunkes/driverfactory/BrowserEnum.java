@@ -21,20 +21,20 @@ public enum BrowserEnum implements BrowserInterface{
     },
     CHROME {
         public WebDriver driver(boolean ci){
+            ChromeOptions capabilites = new ChromeOptions();
             if(ci){
                 System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
+                capabilites.setBinary("/usr/bin/google-chrome-stable");
             }else{
                 System.setProperty("webdriver.chrome.driver", "C:\\drivers\\chromedriver.exe");
             }
-            ChromeOptions capabilites = new ChromeOptions();
             String [] arguments = {
                     "--no-sandbox",
                     "--disable-dev-shm-usage",
                     "--verbose",
                     "--allow-running-insecure-content",
                     "--allow-insecure-localhost",
-                    "--disable-gpu",
-                    "--remote-debugging-port=9222"
+                    "--disable-gpu"
             };
 
             capabilites.addArguments(arguments);
