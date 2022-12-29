@@ -24,7 +24,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Teste Selenium
-      run: mvn clean test -Dtest=RunnerAll -Dbrowser=chrome
+      run: mvn clean test -Dtest=RunnerAll -Dbrowser=chrome -Dci=yes
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     #- name: Update dependency graph

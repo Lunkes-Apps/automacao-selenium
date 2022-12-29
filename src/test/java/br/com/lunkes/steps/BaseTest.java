@@ -17,8 +17,13 @@ public class BaseTest {
     @BeforeAll
     public static void setUp() throws DriverNotConfigured {
         String browser = System.getProperty("browser");
-        WebDriver driver = getDriver(BrowserEnum.valueOf((browser != null ? browser : "chrome").toUpperCase()));
+        boolean ci = System.getProperty("ci") == "sim";
+
+        browser = (browser != null ? browser : "chrome").toUpperCase();
+
+        WebDriver driver = getDriver(BrowserEnum.valueOf(browser), ci);
         int timeout = Integer.parseInt(retornaPropriedade("timeout"));
+
         driver.manage().timeouts().implicitlyWait(timeout, TimeUnit.SECONDS);
     }
 
