@@ -25,6 +25,7 @@ public enum BrowserEnum implements BrowserInterface{
             if(ci){
                 System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
                 capabilites.setBinary("/usr/bin/google-chrome-stable");
+                capabilites.addArguments("--headless");
             }else{
                 System.setProperty("webdriver.chrome.driver", "C:\\drivers\\chromedriver.exe");
             }
