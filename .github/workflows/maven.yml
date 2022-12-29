@@ -20,6 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: alexandrelunkes/maven-chrome:v1.2
+      options: --user root
 #      options:
 #        -v "${{github.workspace}}":"${{github.workspace}}"
 
