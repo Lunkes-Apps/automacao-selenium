@@ -20,5 +20,5 @@ Feature: Classificar triângulo
     Given que estou na tela principal
     When informo os vértices '2', '1' e '10'
     And clico no botao identificar
-    Then deve ser informado que o triangulo não é possíve
+    Then deve ser informado que o triangulo não é possível
 
