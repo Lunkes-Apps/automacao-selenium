@@ -29,7 +29,7 @@ jobs:
 #    - name: Ajuste Pasta
 #      run: cp -R ${{github.workspace}} /
     - name: Teste Selenium
-      run: mvn -ntp clean test -Dtest=RunnerAll -Dbrowser=chrome -Dci=sim
+      run: whoami && mvn -ntp clean test -Dtest=RunnerAll -Dbrowser=chrome -Dci=sim
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     #- name: Update dependency graph
